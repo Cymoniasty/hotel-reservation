@@ -1,18 +1,15 @@
 import React, {Component} from "react";
 import Hotel from "./Hotel/Hotel";
+import styles from './Hotels.module.css'
 
 class Hotels extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
-            <>
-                <div>Hotels</div>
+            <div className={styles.container}>
+                <h2 className={styles.title}>Oferty:</h2>
                 <Hotel/>
                 <Hotel/>
-            </>
+            </div>
         )
     }
 }

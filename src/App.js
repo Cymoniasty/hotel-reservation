@@ -5,7 +5,7 @@ import Hotels from "./components/Hotels/Hotels";
 
 function App() {
     return (
-        <div className="App">
+        <div className="App container">
             <Header/>
             <Menu/>
             <Hotels/>
