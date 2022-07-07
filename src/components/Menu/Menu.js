@@ -1,13 +1,13 @@
 import React from "react";
-import style from './Menu.module.css'
+import style from './Menu.module.scss'
 
 function Menu() {
 
     return (
         <div className={`container ${style.menuContainer}`}>
+            <a href="#">Home</a>
             <ul className={style.menu}>
                 <li className={style.menuItem}>
-                    <a href="#">Home</a>
                 </li>
             </ul>
         </div>
