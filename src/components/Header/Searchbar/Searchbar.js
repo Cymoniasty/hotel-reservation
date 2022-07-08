@@ -1,9 +1,10 @@
 import {useState} from "react";
 
-function SearchBar() {
+function SearchBar(props) {
     const [term, setTerm] = useState('')
+
     const search = () => {
-        console.log("asdf", term)
+        props.onSearch(term)
     }
     const updateTerm = (e) => {
         setTerm(e.target.value);
@@ -12,7 +13,7 @@ function SearchBar() {
     const onKeyDownHandler = (e) => {
         //e.key === "Enter" && search() to samo co if na dole
         if (e.key === "Enter") {
-            search();
+            search()
         }
     }
 
