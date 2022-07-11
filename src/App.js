@@ -3,6 +3,7 @@ import './App.scss';
 import Header from "./components/Header/Header";
 import Menu from "./components/Menu/Menu";
 import Hotels from "./components/Hotels/Hotels";
+import LoadingIcon from "./components/UI/LoadingIcon/LoadingIcon";
 
 class App extends Component {
     // eslint-disable-next-line no-useless-constructor
@@ -29,11 +30,11 @@ class App extends Component {
         }
     ];
     state = {
-        hotels: this.hotels
+        hotels: [],
+        loading: true
     }
 
     searchHandler(term) {
-        console.log('szukaj z app', term)
         const hotels = [...this.hotels]
             .filter(x => x.name
                 .toLowerCase()
@@ -41,12 +42,25 @@ class App extends Component {
         this.setState({hotels})
     }
 
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({
+                hotels: this.hotels,
+                loading: false
+            });
+        }, 1500)
+    }
+
     render() {
         return (
             <div className="App container">
                 <Header onSearch={(term) => this.searchHandler(term)}/>
                 <Menu/>
-                <Hotels hotels={this.state.hotels}/>
+                {this.state.loading ? (
+                    <LoadingIcon/>
+                ) : (
+                    <Hotels hotels={this.state.hotels}/>
+                )}
             </div>
         )
     }

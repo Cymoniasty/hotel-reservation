@@ -1,5 +1,13 @@
+import propTypes from 'prop-types';
 import styles from './Hotel.module.css';
 import hotelImg from '../../../assets/images/hotel.jpg';
+
+const propsTypes = {
+    name: propTypes.string.isRequired,
+    city: propTypes.string.isRequired,
+    rating: propTypes.number.isRequired,
+    description: propTypes.string.isRequired,
+};
 
 function Hotel(props) {
     return (
@@ -11,13 +19,13 @@ function Hotel(props) {
                         <img
                             src={hotelImg}
                             alt=""
-                            className="img-fluid img-thumbnail" />
+                            className="img-fluid img-thumbnail"/>
                     </div>
                     <div className="col-8">
                         <div className="row">
                             <div className="col">
                                 <p className={styles.title}>{props.name}</p>
-                                <span className="badge badge-light">{props.city}</span>
+                                <span className="badge badge-light text-dark p-1 bg-light">{props.city}</span>
                             </div>
                             <div className="col text-right">
                                 <h5>{props.rating}</h5>
@@ -37,5 +45,7 @@ function Hotel(props) {
         </div>
     );
 }
+
+Hotel.propTypes = propsTypes;
 
 export default Hotel;
