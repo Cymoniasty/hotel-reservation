@@ -1,12 +1,12 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from './Hotel.module.css';
 import hotelImg from '../../../assets/images/hotel.jpg';
 
-const propsTypes = {
-    name: propTypes.string.isRequired,
-    city: propTypes.string.isRequired,
-    rating: propTypes.number.isRequired,
-    description: propTypes.string.isRequired,
+const propTypes = {
+    name: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
 };
 
 function Hotel(props) {
@@ -46,6 +46,6 @@ function Hotel(props) {
     );
 }
 
-Hotel.propTypes = propsTypes;
+Hotel.propTypes = propTypes;
 
 export default Hotel;

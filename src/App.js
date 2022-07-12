@@ -6,17 +6,13 @@ import Hotels from "./components/Hotels/Hotels";
 import LoadingIcon from "./components/UI/LoadingIcon/LoadingIcon";
 
 class App extends Component {
-    // eslint-disable-next-line no-useless-constructor
-    constructor(props) {
-        super(props);
-    }
 
     hotels = [
         {
             id: 0,
             name: 'Pod akacjami',
             city: 'Warszawa',
-            rating: '8.3',
+            rating: 8.3,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat id lorem vitae accumsan.',
             image: '',
         },
@@ -24,7 +20,7 @@ class App extends Component {
             id: 1,
             name: 'Dębowy',
             city: 'Lublin',
-            rating: '8.8',
+            rating: 8.8,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat id lorem vitae accumsan.',
             image: '',
         }
@@ -39,6 +35,7 @@ class App extends Component {
             .filter(x => x.name
                 .toLowerCase()
                 .includes(term.toLowerCase()))
+        debugger;
         this.setState({hotels})
     }
 
